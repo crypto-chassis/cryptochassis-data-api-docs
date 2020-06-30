@@ -5,7 +5,7 @@
 * Supported derivatives: bitmex (xbtusd).
 * Backfill history: 5 years historical data, wherever applicable.
 * Institutional quality and independently verifiable.
-* To spur innovation and industry collaboration, this API is open for use by the public without cost.
+* To spur innovation and industry collaboration, this API is open for use by the public without cost. Follow us on https://medium.com/@cryptochassis and our publication on https://medium.com/open-crypto-market-data-initiative.
 * Please contact hello@cryptochassis.com for general questions, issue reporting, consultative services, and/or custom engineering work.
 
 ## General API Information

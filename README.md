@@ -175,7 +175,7 @@ endTime | no | E.g. 1577318400 (seconds), 2019-12-26T00:00:00.000Z (iso). If abs
         "fields": "time_seconds, open, high, low, close, volume, vwap, number_of_trades, twap",
         "data": [
             [
-                1590969600, // open time
+                1590969600, // unix time for interval start
                 "9451.1", // open
                 "10398", // high
                 "9421.75975983", // low

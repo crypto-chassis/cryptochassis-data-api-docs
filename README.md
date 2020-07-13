@@ -93,6 +93,11 @@ startTime | no | E.g. 1577318400 (seconds), 2019-12-26 (iso). If absent, default
 
 https://api.cryptochassis.com/v1/quote/coinbase/btc-usd
 
+**CSV file format:**
+
+time_seconds,time_nanoseconds,bid_price,bid_size,ask_price,ask_size
+1594512000,10595000,9234.05,2.11950305,9234.98,2
+
 ### Trade
 ```
 GET /trade/<exchange>/<instrument>?startTime=<startTime>
@@ -127,11 +132,16 @@ startTime | no | E.g. 1577318400 (seconds), 2019-12-26 (iso). If absent then def
 **Examples:**
 https://api.cryptochassis.com/v1/trade/coinbase/btc-usd
 
+**CSV file format:**
+
+time_seconds,time_nanoseconds,price,size,is_buyer_maker,trade_id
+1594512000,140000000,9235,0.004,0,96572013
+
 ### Market Depth (BETA)
 ```
 GET /market-depth/<exchange>/<instrument>?startTime=<startTime>
 ```
-Daily data on market depth (aka order books or Level 2 data). Depths cover 1 to 10 at 1-second resolution.
+Daily 1-second snapshot data on market depth (aka order books or Level 2 data) up to a depth of 10.
 
 **Parameters:**
 
@@ -161,6 +171,13 @@ startTime | no | E.g. 1594166400 (seconds), 2020-07-08 (iso). If absent, default
 **Examples:**
 
 https://api.cryptochassis.com/v1/market-depth/coinbase/btc-usd
+
+**CSV file format:**
+
+time_seconds,bid_price_bid_size|...,ask_price_ask_size|...
+1594512000,9234.05_2.20765974|...,9234.98_2|...
+
+If there is a gap in "time_seconds", it means that the market depth snapshot at that moment is the same (up to depth 10) as the previous moment.
 
 ### OHLC (BETA)
 ```
@@ -228,3 +245,9 @@ endTime | no | E.g. 1577318400 (seconds), 2019-12-26T00:00:00.000Z (iso). If abs
 
 **Examples:**
 https://api.cryptochassis.com/v1/ohlc/coinbase/btc-usd
+https://api.cryptochassis.com/v1/ohlc/coinbase/btc-usd?startTime=0
+
+**CSV file format:**
+
+time_seconds,open,high,low,close,volume,vwap,number_of_trades,twap
+1451606400,430.35,430.39,430.35,430.39,0.0727,430.3804,4,430.3725

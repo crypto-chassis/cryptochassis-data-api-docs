@@ -1,5 +1,5 @@
 # Public Rest API From Cryptochassis
-* This API provides tick data (e.g. quotes, trades) and aggregated data (e.g. ohlc) about leading crypto-currencies on leading crypto-exchanges.
+* This API provides tick data (e.g. quotes, trades), snapshot data (e.g. market depth), and aggregated data (e.g. ohlc) about leading crypto-currencies on leading crypto-exchanges.
 * Supported currencies: btc, eth, ltc, xrp, bch, eos.
 * Supported spot exchanges: coinbase, gemini, kraken, bitstamp, bitfinex.
 * Supported derivatives: bitmex (xbtusd).
@@ -26,7 +26,7 @@ Information about available data types, exchanges, instruments, and the first/la
 
 Name | Mandatory | Description
 ------------ | ------------ | ------------
-dataType | no | Comma seperated list. Allowed values: quote, trade, ohlc.
+dataType | no | Comma seperated list. Allowed values: quote, trade, market-depth, ohlc.
 exchange | no | Comma seperated list. Allowed values: coinbase, gemini, kraken, bitstamp, bitfinex, bitmex.
 instrument | no | Comma seperated list. Allowed values: btc-usd, eth-usd, ltc-usd, xrp-usd, bch-usd, eos-usd, xbtusd.
 
@@ -126,6 +126,41 @@ startTime | no | E.g. 1577318400 (seconds), 2019-12-26 (iso). If absent then def
 
 **Examples:**
 https://api.cryptochassis.com/v1/trade/coinbase/btc-usd
+
+### Market Depth (BETA)
+```
+GET /market-depth/<exchange>/<instrument>?startTime=<startTime>
+```
+Daily data on market depth (aka order books or Level 2 data). Depths cover 1 to 10 at 1-second resolution.
+
+**Parameters:**
+
+Name | Mandatory | Description
+------------ | ------------ | ------------
+exchange | yes | E.g. coinbase.
+instrument | yes | E.g. btc-usd.
+startTime | no | E.g. 1594166400 (seconds), 2020-07-08 (iso). If absent, defaults to most recent.
+
+**Response:**
+```javascript
+{
+    "urls": [
+        {
+            "startTime": {
+                "seconds": 1594166400, // unix time
+                "iso": "2020-07-08T00:00:00.000Z"
+            },
+            "url": "https://marketdata-e0323a9039add2978bf5b49550572c7c.s3.amazonaws.com/market_depth/bitfinex/btc_usd/1594166400.csv.gz?AWSAccessKeyId=AKIATPNB7YZIUQR3JVNF&Expires=1594515416&Signature=T25g0YP0ALalj5jCUAQ9mtZ41M0%3D"
+            // daily data, gzipped csv. Url is pre-signed and could expire.
+        }
+    ],
+    "expiration": "30 seconds"
+}
+```
+
+**Examples:**
+
+https://api.cryptochassis.com/v1/market-depth/coinbase/btc-usd
 
 ### OHLC (BETA)
 ```

@@ -127,7 +127,7 @@ startTime | no | E.g. 1577318400 (seconds), 2019-12-26 (iso). If absent then def
 **Examples:**
 https://api.cryptochassis.com/v1/trade/coinbase/btc-usd
 
-### OHLC (BETA)
+### OHLC
 ```
 GET /ohlc/<exchange>/<instrument>?interval=<interval>&startTime=<startTime>&endTime=<endTime>
 ```

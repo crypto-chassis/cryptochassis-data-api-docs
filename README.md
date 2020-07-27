@@ -186,6 +186,7 @@ endTime | no | E.g. 1577318400 (seconds), 2019-12-26T00:00:00.000Z (iso). If abs
                 "9701.6274016032" // time weighted average price = sum(tick_price) / number_of_trades
             ],
             ...
+            // Note that the last bar may have not closed yet.
         ]
     }
 }

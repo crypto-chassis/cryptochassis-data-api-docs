@@ -6,7 +6,7 @@
 * Backfill history: 5 years historical data, wherever applicable.
 * Institutional quality and independently verifiable.
 * To spur innovation and industry collaboration, this API is open for use by the public without cost. Follow us on https://medium.com/@cryptochassis and our publication on https://medium.com/open-crypto-market-data-initiative.
-* Please contact hello@cryptochassis.com for general questions, issue reporting, consultative services, and/or custom engineering work.
+* Please contact us for general questions, issue reporting, consultative services, and/or custom engineering work. To subscribe to our mailing list, simply send us an email with subject "subscribe".
 
 ## General API Information
 * The base endpoint is: **https://api.cryptochassis.com/v1**
@@ -56,6 +56,7 @@ instrument | no | Comma seperated list. Allowed values: btc-usd, eth-usd, ltc-us
 ```
 
 **Examples:**
+
 https://api.cryptochassis.com/v1/information
 
 ### Quote
@@ -130,13 +131,14 @@ startTime | no | E.g. 1577318400 (seconds), 2019-12-26 (iso). If absent then def
 ```
 
 **Examples:**
+
 https://api.cryptochassis.com/v1/trade/coinbase/btc-usd
 
 **CSV file format:**
 
 time_seconds,time_nanoseconds,price,size,is_buyer_maker,trade_id
 1594512000,140000000,9235,0.004,0,96572013
-
+<!---
 ### Market Depth (BETA)
 ```
 GET /market-depth/<exchange>/<instrument>?startTime=<startTime>
@@ -178,8 +180,8 @@ time_seconds,bid_price_bid_size|...,ask_price_ask_size|...
 1594512000,9234.05_2.20765974|...,9234.98_2|...
 
 If there is a gap in "time_seconds", it means that the market depth snapshot at that moment is the same (up to depth 10) as the previous moment.
-
-### OHLC (BETA)
+-->
+### OHLC
 ```
 GET /ohlc/<exchange>/<instrument>?interval=<interval>&startTime=<startTime>&endTime=<endTime>
 ```
@@ -238,13 +240,15 @@ endTime | no | E.g. 1577318400 (seconds), 2019-12-26T00:00:00.000Z (iso). If abs
                 "9701.6274016032" // time weighted average price = sum(tick_price) / number_of_trades
             ],
             ...
+            // Note that the last bar may have not closed yet.
         ]
     }
 }
 ```
 
 **Examples:**
-https://api.cryptochassis.com/v1/ohlc/coinbase/btc-usd
+
+https://api.cryptochassis.com/v1/ohlc/coinbase/btc-usd  
 https://api.cryptochassis.com/v1/ohlc/coinbase/btc-usd?startTime=0
 
 **CSV file format:**

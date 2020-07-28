@@ -1,5 +1,5 @@
 # Public Rest API From Cryptochassis
-* This API provides tick data (e.g. quotes, trades), snapshot data (e.g. market depth), and aggregated data (e.g. ohlc) about leading crypto-currencies on leading crypto-exchanges.
+* This API provides tick data (e.g. quotes, trades)<!---, snapshot data (e.g. market depth),--> and aggregated data (e.g. ohlc) about leading crypto-currencies on leading crypto-exchanges.
 * Supported currencies: btc, eth, ltc, xrp, bch, eos.
 * Supported spot exchanges: coinbase, gemini, kraken, bitstamp, bitfinex.
 * Supported derivatives: bitmex (xbtusd).
@@ -26,7 +26,7 @@ Information about available data types, exchanges, instruments, and the first/la
 
 Name | Mandatory | Description
 ------------ | ------------ | ------------
-dataType | no | Comma seperated list. Allowed values: quote, trade, market-depth, ohlc.
+dataType | no | Comma seperated list. Allowed values: quote, trade,<!--- market-depth,--> ohlc.
 exchange | no | Comma seperated list. Allowed values: coinbase, gemini, kraken, bitstamp, bitfinex, bitmex.
 instrument | no | Comma seperated list. Allowed values: btc-usd, eth-usd, ltc-usd, xrp-usd, bch-usd, eos-usd, xbtusd.
 

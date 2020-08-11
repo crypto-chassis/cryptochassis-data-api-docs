@@ -1,5 +1,5 @@
 # Public Rest API From Cryptochassis
-* This API provides tick data (e.g. quotes, trades)<!---, snapshot data (e.g. market depth),--> and aggregated data (e.g. ohlc) about leading crypto-currencies on leading crypto-exchanges.
+* This API provides tick data (e.g. quotes, trades), snapshot data (e.g. market depth), and aggregated data (e.g. ohlc) about leading crypto-currencies on leading crypto-exchanges.
 * Supported currencies: btc, eth, ltc, xrp, bch, eos.
 * Supported spot exchanges: coinbase, gemini, kraken, bitstamp, bitfinex.
 * Supported derivatives: bitmex (xbtusd).
@@ -26,7 +26,7 @@ Information about available data types, exchanges, instruments, and the first/la
 
 Name | Mandatory | Description
 ------------ | ------------ | ------------
-dataType | no | Comma seperated list. Allowed values: quote, trade,<!--- market-depth,--> ohlc.
+dataType | no | Comma seperated list. Allowed values: quote, trade, market-depth, ohlc.
 exchange | no | Comma seperated list. Allowed values: coinbase, gemini, kraken, bitstamp, bitfinex, bitmex.
 instrument | no | Comma seperated list. Allowed values: btc-usd, eth-usd, ltc-usd, xrp-usd, bch-usd, eos-usd, xbtusd.
 
@@ -138,8 +138,8 @@ https://api.cryptochassis.com/v1/trade/coinbase/btc-usd
 
 time_seconds,time_nanoseconds,price,size,is_buyer_maker,trade_id
 1594512000,140000000,9235,0.004,0,96572013
-<!---
-### Market Depth (BETA)
+
+### Market Depth
 ```
 GET /market-depth/<exchange>/<instrument>?startTime=<startTime>
 ```
@@ -180,7 +180,7 @@ time_seconds,bid_price_bid_size|...,ask_price_ask_size|...
 1594512000,9234.05_2.20765974|...,9234.98_2|...
 
 If there is a gap in "time_seconds", it means that the market depth snapshot at that moment is the same (up to depth 10) as the previous moment.
--->
+
 ### OHLC
 ```
 GET /ohlc/<exchange>/<instrument>?interval=<interval>&startTime=<startTime>&endTime=<endTime>

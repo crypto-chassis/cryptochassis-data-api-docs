@@ -99,46 +99,6 @@ https://api.cryptochassis.com/v1/quote/coinbase/btc-usd
 time_seconds,time_nanoseconds,bid_price,bid_size,ask_price,ask_size
 1594512000,10595000,9234.05,2.11950305,9234.98,2
 
-### Trade
-```
-GET /trade/<exchange>/<instrument>?startTime=<startTime>
-```
-Daily trade ticks. Each tick represents a single trade.
-
-**Parameters:**
-
-Name | Mandatory | Description
------------- | ------------ | ------------
-exchange | yes | E.g. coinbase.
-instrument | yes | E.g. btc-usd.
-startTime | no | E.g. 1577318400 (seconds), 2019-12-26 (iso). If absent then defaults to most recent.
-
-**Response:**
-```javascript
-{
-    "urls": [
-        {
-            "startTime": {
-                "seconds": 1577318400, // unix time
-                "iso": "2019-12-26T00:00:00.000Z"
-            },
-            "url": "https://marketdata-e0323a9039add2978bf5b49550572c7c.s3.amazonaws.com/trade/coinbase/btc_usd/1577318400.csv.gzip?AWSAccessKeyId=AKIATPNB7YZIUQR3JVNF&Expires=1577486042&Signature=jQ9Vya3X9yBc7x26MyWhRKdKEdI%3D"
-            // daily data, gzipped csv. Url is pre-signed and could expire.
-        }
-    ],
-    "expiration": "30 seconds"
-}
-```
-
-**Examples:**
-
-https://api.cryptochassis.com/v1/trade/coinbase/btc-usd
-
-**CSV file format:**
-
-time_seconds,time_nanoseconds,price,size,is_buyer_maker,trade_id
-1594512000,140000000,9235,0.004,0,96572013
-
 ### Market Depth
 ```
 GET /market-depth/<exchange>/<instrument>?startTime=<startTime>
@@ -180,6 +140,46 @@ time_seconds,bid_price_bid_size|...,ask_price_ask_size|...
 1594512000,9234.05_2.20765974|...,9234.98_2|...
 
 If there is a gap in "time_seconds", it means that the market depth snapshot at that moment is the same (up to depth 10) as the previous moment.
+
+### Trade
+```
+GET /trade/<exchange>/<instrument>?startTime=<startTime>
+```
+Daily trade ticks. Each tick represents a single trade.
+
+**Parameters:**
+
+Name | Mandatory | Description
+------------ | ------------ | ------------
+exchange | yes | E.g. coinbase.
+instrument | yes | E.g. btc-usd.
+startTime | no | E.g. 1577318400 (seconds), 2019-12-26 (iso). If absent then defaults to most recent.
+
+**Response:**
+```javascript
+{
+    "urls": [
+        {
+            "startTime": {
+                "seconds": 1577318400, // unix time
+                "iso": "2019-12-26T00:00:00.000Z"
+            },
+            "url": "https://marketdata-e0323a9039add2978bf5b49550572c7c.s3.amazonaws.com/trade/coinbase/btc_usd/1577318400.csv.gzip?AWSAccessKeyId=AKIATPNB7YZIUQR3JVNF&Expires=1577486042&Signature=jQ9Vya3X9yBc7x26MyWhRKdKEdI%3D"
+            // daily data, gzipped csv. Url is pre-signed and could expire.
+        }
+    ],
+    "expiration": "30 seconds"
+}
+```
+
+**Examples:**
+
+https://api.cryptochassis.com/v1/trade/coinbase/btc-usd
+
+**CSV file format:**
+
+time_seconds,time_nanoseconds,price,size,is_buyer_maker,trade_id
+1594512000,140000000,9235,0.004,0,96572013
 
 ### OHLC
 ```

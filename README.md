@@ -12,7 +12,7 @@
 * The base endpoint is: **https://api.cryptochassis.com/v1**
 
 ## Reqeust Rate Limits
-* The limit on the API is based on public IPs: 1 request per second per IP.
+* The limit on the API is based on public IPs: 10 request per second per IP.
 
 ## Public API Endpoints
 
@@ -86,7 +86,7 @@ startTime | no | E.g. 1577318400 (seconds), 2019-12-26 (iso). If absent, default
             // daily data, gzipped csv. Url is pre-signed and could expire.
         }
     ],
-    "expiration": "30 seconds"
+    "expiration": "300 seconds"
 }
 ```
 
@@ -126,7 +126,7 @@ startTime | no | E.g. 1594166400 (seconds), 2020-07-08 (iso). If absent, default
             // daily data, gzipped csv. Url is pre-signed and could expire.
         }
     ],
-    "expiration": "30 seconds"
+    "expiration": "300 seconds"
 }
 ```
 
@@ -168,7 +168,7 @@ startTime | no | E.g. 1577318400 (seconds), 2019-12-26 (iso). If absent then def
             // daily data, gzipped csv. Url is pre-signed and could expire.
         }
     ],
-    "expiration": "30 seconds"
+    "expiration": "300 seconds"
 }
 ```
 
@@ -215,7 +215,7 @@ endTime | no | E.g. 1577318400 (seconds), 2019-12-26T00:00:00.000Z (iso). If abs
                 // historical data, gzipped csv. Url is pre-signed and could expire.
             }
         ],
-        "expiration": "30 seconds"
+        "expiration": "300 seconds"
     },
     "recent": {
         "startTime": {

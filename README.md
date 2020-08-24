@@ -71,7 +71,7 @@ Name | Mandatory | Description
 ------------ | ------------ | ------------
 exchange | yes | E.g. coinbase.
 instrument | yes | E.g. btc-usd.
-depth | no | Allowed values: 1, 10. Defaults to 1.
+depth | no | Allowed values: 1, 10. Defaults to 10.
 startTime | no | E.g. 1594166400 (seconds), 2020-07-08 (iso). Defaults to most recent.
 
 **Response:**

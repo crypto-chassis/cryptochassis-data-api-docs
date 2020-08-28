@@ -1,3 +1,19 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [Public Rest API From Cryptochassis](#public-rest-api-from-cryptochassis)
+  - [General API Information](#general-api-information)
+  - [Reqeust Rate Limits](#reqeust-rate-limits)
+  - [Public API Endpoints](#public-api-endpoints)
+    - [Information](#information)
+    - [Market Depth](#market-depth)
+    - [Quote](#quote)
+    - [Trade](#trade)
+    - [OHLC](#ohlc)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Public Rest API From Cryptochassis
 * This API provides snapshot data (e.g. market depth, quote), tick data (e.g. trades), and aggregated data (e.g. ohlc) for crypto-currencies.
 * Supported currencies: btc, eth, ltc, xrp, bch, eos.

@@ -17,8 +17,8 @@
 # Public Rest API From Cryptochassis
 * This API provides snapshot data (e.g. market depth, quote), tick data (e.g. trades), and aggregated data (e.g. ohlc) for crypto-currencies.
 * Supported currencies: btc, eth, ltc, xrp, bch, eos.
-* Supported spot exchanges: coinbase, gemini, kraken, bitstamp, bitfinex.
-* Supported derivatives: bitmex (xbtusd).
+* Supported spot exchanges: coinbase, gemini, kraken, bitstamp, bitfinex, binance-us, binance.
+* Supported derivatives: bitmex (xbtusd), binance-futures (btcusdt).
 * Backfill history: 5 years historical data, wherever applicable.
 * Institutional quality and independently verifiable.
 * To spur innovation and industry collaboration, this API is open for use by the public without cost. Follow us on https://medium.com/@cryptochassis and our publication on https://medium.com/open-crypto-market-data-initiative.

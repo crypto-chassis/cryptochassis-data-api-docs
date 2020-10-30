@@ -17,7 +17,7 @@
 # Public Rest API From Cryptochassis
 * This API provides snapshot data (e.g. market depth, quote), tick data (e.g. trades), and aggregated data (e.g. ohlc) for crypto-currencies.
 * Supported currencies: btc, eth, ltc, xrp, bch, eos.
-* Supported spot exchanges: coinbase, gemini, kraken, bitstamp, bitfinex, binance-us, binance.
+* Supported spot exchanges: coinbase, gemini, kraken, bitstamp, bitfinex, binance-us, binance, huobi, okex.
 * Supported derivatives: bitmex (xbtusd), binance-futures (btcusdt).
 * Backfill history: 5 years historical data, wherever applicable.
 * Institutional quality and independently verifiable.
@@ -43,8 +43,8 @@ Information about available data types, exchanges, instruments, and the availabl
 Name | Mandatory | Description
 ------------ | ------------ | ------------
 dataType | no | Comma seperated list. Allowed values: market-depth, quote, trade, ohlc.
-exchange | no | Comma seperated list. Allowed values: coinbase, gemini, kraken, bitstamp, bitfinex, bitmex.
-instrument | no | Comma seperated list. Allowed values: btc-usd, eth-usd, ltc-usd, xrp-usd, bch-usd, eos-usd, xbtusd.
+exchange | no | Comma seperated list. Allowed values: coinbase, gemini, kraken, bitstamp, bitfinex, bitmex, binance-us, binance, binance-futures, huobi, okex.
+instrument | no | Comma seperated list. Allowed values: btc-usd(t), eth-usd(t), ltc-usd(t), xrp-usd(t), bch-usd(t), eos-usd(t), xbtusd, btcusdt.
 
 **Response:**
 ```javascript

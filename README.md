@@ -19,7 +19,7 @@
 * Supported currencies: btc, eth, ltc, xrp, bch, eos.
 * Supported spot exchanges: coinbase, gemini, kraken, bitstamp, bitfinex, binance-us, binance, huobi, okex.
 * Supported derivatives: bitmex (xbtusd), binance-futures (btcusdt).
-* Backfill history: 5 years historical data, wherever applicable.
+* Backfill history: 6 years historical data, wherever applicable.
 * Institutional quality and independently verifiable.
 * To spur innovation and industry collaboration, this API is open for use by the public without cost. Follow us on https://cryptochassis.medium.com.
 * Please contact us for general questions, issue reporting, consultative services, and/or custom engineering work. To subscribe to our mailing list, simply send us an email with subject "subscribe".

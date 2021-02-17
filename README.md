@@ -21,8 +21,9 @@
 * Supported derivatives: bitmex (xbtusd), binance-futures (btcusdt).
 * Backfill history: 6 years historical data, wherever applicable.
 * Institutional quality and independently verifiable.
-* To spur innovation and industry collaboration, this API is open for use by the public without cost. Follow us on https://cryptochassis.medium.com.
+* To spur innovation and industry collaboration, this API is open for use by the public without cost.
 * Please contact us for general questions, issue reporting, consultative services, and/or custom engineering work. To subscribe to our mailing list, simply send us an email with subject "subscribe".
+* Join us on Medium https://cryptochassis.medium.com and Telegram https://t.me/cryptochassis.
 
 ## General API Information
 * The base endpoint is: **https://api.cryptochassis.com/v1**

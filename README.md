@@ -242,4 +242,4 @@ time_seconds,open,high,low,close,volume,vwap,number_of_trades,twap
 1451606400,430.35,430.39,430.35,430.39,0.0727,430.3804,4,430.3725
 
 ## Troubleshoot
-* macOS Archive Utility can't unzip gzipped files (Error 79 - Inappropriate file type or format). This is a known bug on macOS (see https://apple.stackexchange.com/questions/388759/archive-utility-cant-open-some-gzipped-text-files-based-on-their-contents). Try to unzip the files by other means (e.g. https://stackoverflow.com/questions/50993318/uncompress-a-txt-gz-file-in-mac).
+* macOS Archive Utility can't unzip gzipped files (Error 79 - Inappropriate file type or format). This is a known bug on some versions of macOS (see https://apple.stackexchange.com/questions/388759/archive-utility-cant-open-some-gzipped-text-files-based-on-their-contents). Try to unzip the files by other means (e.g. https://stackoverflow.com/questions/50993318/uncompress-a-txt-gz-file-in-mac).

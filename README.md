@@ -11,6 +11,7 @@
     - [Quote](#quote)
     - [Trade](#trade)
     - [OHLC](#ohlc)
+  - [Troubleshoot](#troubleshoot)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

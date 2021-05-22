@@ -1,10 +1,3 @@
-# Telegram Account Issue:
-We are experiencing an account issue on Telegram and have escalated it to their support team for resolution. Meanwhile, please join our Discord server for immediate discussions and urgent issues:
-
-https://discord.gg/b5EKcp9s8T
-
-We sincerely apologize for the inconvenience.
-
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
@@ -31,7 +24,7 @@ We sincerely apologize for the inconvenience.
 * Institutional quality and independently verifiable.
 * To spur innovation and industry collaboration, this API is open for use by the public without cost.
 * Please contact us for general questions, issue reporting, consultative services, and/or custom engineering work. To subscribe to our mailing list, simply send us an email with subject "subscribe".
-* Join us on Medium https://cryptochassis.medium.com and Discord https://discord.gg/b5EKcp9s8T.
+* Join us on Discord https://discord.gg/b5EKcp9s8T and Medium https://cryptochassis.medium.com.
 
 ## General API Information
 * The base endpoint is: **https://api.cryptochassis.com/v1**

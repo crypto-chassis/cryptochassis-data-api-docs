@@ -118,7 +118,7 @@ https://api.cryptochassis.com/v1/market-depth/coinbase/btc-usd
 time_seconds,bid_price_bid_size|...,ask_price_ask_size|...  
 1594512000,9234.05_2.20765974|...,9234.98_2|...
 
-If there is a gap in "time_seconds", it means that the market depth snapshot at that moment is the same (up to depth 10) as the previous moment.
+If there is a gap in "time_seconds", it means that the market depth snapshot at that moment is the same as the previous moment.
 
 ### Quote
 ```

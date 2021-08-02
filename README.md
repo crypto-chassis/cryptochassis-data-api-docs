@@ -24,7 +24,7 @@
 * Institutional quality and independently verifiable.
 * To spur innovation and industry collaboration, this API is open for use by the public without cost.
 * Please contact us for general questions, issue reporting, consultative services, and/or custom engineering work. To subscribe to our mailing list, simply send us an email with subject "subscribe".
-* Join us on Medium https://cryptochassis.medium.com and Telegram https://t.me/cryptochassis.
+* Join us on Discord https://discord.gg/b5EKcp9s8T and Medium https://cryptochassis.medium.com.
 
 ## General API Information
 * The base endpoint is: **https://api.cryptochassis.com/v1**
@@ -118,7 +118,7 @@ https://api.cryptochassis.com/v1/market-depth/coinbase/btc-usd
 time_seconds,bid_price_bid_size|...,ask_price_ask_size|...  
 1594512000,9234.05_2.20765974|...,9234.98_2|...
 
-If there is a gap in "time_seconds", it means that the market depth snapshot at that moment is the same (up to depth 10) as the previous moment.
+If there is a gap in "time_seconds", it means that the market depth snapshot at that moment is the same as the previous moment.
 
 ### Quote
 ```

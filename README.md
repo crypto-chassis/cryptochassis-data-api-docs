@@ -15,12 +15,12 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+**Small breaking change**: `Information` endpoint now needs mandatory query parameter `dataType` and `exchange`.
+
 # Public Data API From Cryptochassis
 * This REST API provides snapshot data (e.g. market depth, quote), tick data (e.g. trades), and aggregated data (e.g. ohlc) for crypto-currencies.
-* Supported currencies: btc, eth, ltc, xrp, bch, eos.
-* Supported spot exchanges: coinbase, gemini, kraken, bitstamp, bitfinex, binance-us, binance, huobi, okex.
-* Supported derivatives: bitmex (xbtusd), binance-futures (btcusdt).
-* Backfill history: 6 years historical data, wherever applicable.
+* Supported exchanges: coinbase, gemini, kraken, bitstamp, bitfinex, bitmex, binance, binance-us, binance-usds-futures, binance-coin-futures, huobi, huobi-usdt-swap, huobi-coin-swap okex, kucoin, ftx, ftx-us.
+* Backfill history: historical data since 2016-01-01, wherever applicable.
 * Institutional quality and independently verifiable.
 * To spur innovation and industry collaboration, this API is open for use by the public without cost.
 * Please contact us for general questions, issue reporting, consultative services, and/or custom engineering work. To subscribe to our mailing list, simply send us an email with subject "subscribe".
@@ -44,9 +44,9 @@ Information about available data types, exchanges, instruments, and the availabl
 
 Name | Mandatory | Description
 ------------ | ------------ | ------------
-dataType | no | Comma seperated list. Allowed values: market-depth, quote, trade, ohlc.
-exchange | no | Comma seperated list. Allowed values: coinbase, gemini, kraken, bitstamp, bitfinex, bitmex, binance-us, binance, binance-futures, huobi, okex.
-instrument | no | Comma seperated list. Allowed values: btc-usd(t), eth-usd(t), ltc-usd(t), xrp-usd(t), bch-usd(t), eos-usd(t), xbtusd, btcusdt.
+dataType | yes | Comma seperated list. Allowed values: market-depth, quote, trade, ohlc.
+exchange | yes | Comma seperated list. Allowed values: coinbase, gemini, kraken, bitstamp, bitfinex, bitmex, binance, binance-us, binance-usds-futures, binance-coin-futures, huobi, huobi-usdt-swap, huobi-coin-swap okex, kucoin, ftx, ftx-us.
+instrument | no | Comma seperated list.
 
 **Response:**
 ```javascript
@@ -89,7 +89,7 @@ Name | Mandatory | Description
 ------------ | ------------ | ------------
 exchange | yes | E.g. coinbase.
 instrument | yes | E.g. btc-usd.
-depth | no | Allowed values: 1, 10. Defaults to 10.
+depth | no | Allowed values: 1, 10. Defaults to 1.
 startTime | no | E.g. 1594166400 (seconds), 2020-07-08 (iso). Defaults to most recent.
 
 **Response:**
@@ -179,8 +179,9 @@ Name | Mandatory | Description
 exchange | yes | E.g. coinbase.
 instrument | yes | E.g. btc-usd.
 interval | no | Allowed values: 1m, 3m, 5m, 15m, 30m, 1h, 2h, 3h, 4h, 6h, 8h, 12h, 1d. Defaults to 1m.
-startTime | no | E.g. 1577318400 (seconds), 2019-12-26T00:00:00.000Z (iso). Defaults to 10 intervals before endTime.
+startTime | no | E.g. 1577318400 (seconds), 2019-12-26T00:00:00.000Z (iso). Defaults to 30 intervals before endTime.
 endTime | no | E.g. 1577318400 (seconds), 2019-12-26T00:00:00.000Z (iso). Defaults to most recent.
+includeRealTime | no | Allowed values: 0, 1. Defaults to 0. If set to 1, request rate limit on this endpoint is 1 request per second per public IP.
 
 **Response:**
 ```javascript

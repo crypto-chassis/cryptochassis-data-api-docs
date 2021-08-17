@@ -19,11 +19,11 @@
 
 # Public Data API From Cryptochassis
 * This REST API provides snapshot data (e.g. market depth, quote), tick data (e.g. trades), and aggregated data (e.g. ohlc) for crypto-currencies.
-* Supported exchanges: coinbase, gemini, kraken, bitstamp, bitfinex, bitmex, binance, binance-us, binance-usds-futures, binance-coin-futures, huobi, huobi-usdt-swap, huobi-coin-swap okex, kucoin, ftx, ftx-us.
+* Supported exchanges: coinbase, gemini, kraken, bitstamp, bitfinex, bitmex, binance, binance-us, binance-usds-futures, binance-coin-futures, huobi, huobi-usdt-swap, huobi-coin-swap okex, kucoin, ftx, ftx-us, deribit.
 * Backfill history: historical data since 2016-01-01, wherever applicable.
 * Institutional quality and independently verifiable.
 * To spur innovation and industry collaboration, this API is open for use by the public without cost.
-* Please contact us for general questions, issue reporting, consultative services, and/or custom engineering work. To subscribe to our mailing list, simply send us an email with subject "subscribe".
+* Please contact us for consultative services and custom engineering work. We specialize in market data collection, high speed trading system, infrastructure optimization, and proprietary market making.
 * Join us on Discord https://discord.gg/b5EKcp9s8T and Medium https://cryptochassis.medium.com.
 
 ## General API Information

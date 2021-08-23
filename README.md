@@ -8,18 +8,17 @@
   - [Public API Endpoints](#public-api-endpoints)
     - [Information](#information)
     - [Market Depth](#market-depth)
-    - [Quote](#quote)
     - [Trade](#trade)
     - [OHLC](#ohlc)
   - [Troubleshoot](#troubleshoot)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-**Small breaking change**: `Information` endpoint now needs mandatory query parameter `dataType` and `exchange`.
+**Small breaking change**: [Information endpoint](#information) now needs mandatory query parameter `dataType` and `exchange`.
 
 # Public Data API From Cryptochassis
 * This REST API provides snapshot data (e.g. market depth, quote), tick data (e.g. trades), and aggregated data (e.g. ohlc) for crypto-currencies.
-* Supported exchanges: coinbase, gemini, kraken, bitstamp, bitfinex, bitmex, binance, binance-us, binance-usds-futures, binance-coin-futures, huobi, huobi-usdt-swap, huobi-coin-swap okex, kucoin, ftx, ftx-us, deribit.
+* Supported exchanges: see the allowed values of parameter `exchange` for the [information endpoint](#information).
 * Backfill history: historical data since 2016-01-01, wherever applicable.
 * Institutional quality and independently verifiable.
 * To spur innovation and industry collaboration, this API is open for use by the public without cost.
@@ -44,9 +43,9 @@ Information about available data types, exchanges, instruments, and the availabl
 
 Name | Mandatory | Description
 ------------ | ------------ | ------------
-dataType | yes | Comma seperated list. Allowed values: market-depth, quote, trade, ohlc.
-exchange | yes | Comma seperated list. Allowed values: coinbase, gemini, kraken, bitstamp, bitfinex, bitmex, binance, binance-us, binance-usds-futures, binance-coin-futures, huobi, huobi-usdt-swap, huobi-coin-swap okex, kucoin, ftx, ftx-us.
-instrument | no | Comma seperated list.
+`dataType` | yes | Allowed values: market-depth, trade, ohlc.
+`exchange` | yes | Allowed values: coinbase, gemini, kraken, bitstamp, bitfinex, bitmex, binance, binance-us, binance-usds-futures, binance-coin-futures, huobi, huobi-usdt-swap, huobi-coin-swap okex, kucoin, ftx, ftx-us, deribit.
+`instrument` | no | Comma seperated list.
 
 **Response:**
 ```javascript
@@ -87,10 +86,10 @@ Daily 1-second snapshot data on market depth (aka order books or Level 2 data) u
 
 Name | Mandatory | Description
 ------------ | ------------ | ------------
-exchange | yes | E.g. coinbase.
-instrument | yes | E.g. btc-usd.
-depth | no | Allowed values: 1, 10. Defaults to 1.
-startTime | no | E.g. 1594166400 (seconds), 2020-07-08 (iso). Defaults to most recent.
+`exchange` | yes | E.g. coinbase.
+`instrument` | yes | E.g. btc-usd.
+`depth` | no | Allowed values: 1, 10. Defaults to 1.
+`startTime` | no | E.g. 1594166400 (seconds), 2020-07-08 (iso). Defaults to most recent.
 
 **Response:**
 ```javascript
@@ -120,12 +119,6 @@ time_seconds,bid_price_bid_size|...,ask_price_ask_size|...
 
 If there is a gap in "time_seconds", it means that the market depth snapshot at that moment is the same as the previous moment.
 
-### Quote
-```
-GET /quote/<exchange>/<instrument>?startTime=<startTime>
-```
-Deprecated. All existing requests are redirected to [Market Depth](#Market-Depth).
-
 ### Trade
 ```
 GET /trade/<exchange>/<instrument>?startTime=<startTime>
@@ -136,9 +129,9 @@ Daily trade ticks. Each tick represents a single trade.
 
 Name | Mandatory | Description
 ------------ | ------------ | ------------
-exchange | yes | E.g. coinbase.
-instrument | yes | E.g. btc-usd.
-startTime | no | E.g. 1577318400 (seconds), 2019-12-26 (iso). Defaults to most recent.
+`exchange` | yes | E.g. coinbase.
+`instrument` | yes | E.g. btc-usd.
+`startTime` | no | E.g. 1577318400 (seconds), 2019-12-26 (iso). Defaults to most recent.
 
 **Response:**
 ```javascript
@@ -163,6 +156,11 @@ https://api.cryptochassis.com/v1/trade/coinbase/btc-usd
 
 **CSV file format:**
 
+time_seconds,price,size,is_buyer_maker
+1594512000.14,9235,0.004,0
+
+**Legacy CSV file format:**
+
 time_seconds,time_nanoseconds,price,size,is_buyer_maker,trade_id  
 1594512000,140000000,9235,0.004,0,96572013
 
@@ -176,12 +174,12 @@ Aggregated metrics from raw trades: open, high, low, close, volume, vwap, number
 
 Name | Mandatory | Description
 ------------ | ------------ | ------------
-exchange | yes | E.g. coinbase.
-instrument | yes | E.g. btc-usd.
-interval | no | Allowed values: 1m, 3m, 5m, 15m, 30m, 1h, 2h, 3h, 4h, 6h, 8h, 12h, 1d. Defaults to 1m.
-startTime | no | E.g. 1577318400 (seconds), 2019-12-26T00:00:00.000Z (iso). Defaults to 30 intervals before endTime.
-endTime | no | E.g. 1577318400 (seconds), 2019-12-26T00:00:00.000Z (iso). Defaults to most recent.
-includeRealTime | no | Allowed values: 0, 1. Defaults to 0. If set to 1, request rate limit on this endpoint is 1 request per second per public IP.
+`exchange` | yes | E.g. coinbase.
+`instrument` | yes | E.g. btc-usd.
+`interval` | no | Allowed values: 1m, 3m, 5m, 15m, 30m, 1h, 2h, 3h, 4h, 6h, 8h, 12h, 1d. Defaults to 1m.
+`startTime` | no | E.g. 1577318400 (seconds), 2019-12-26T00:00:00.000Z (iso). Defaults to 10 intervals before endTime.
+`endTime` | no | E.g. 1577318400 (seconds), 2019-12-26T00:00:00.000Z (iso). Defaults to most recent.
+`includeRealTime` | no | Allowed values: 0, 1. Defaults to 0. If set to 1, request rate limit on this endpoint is 1 request per second per public IP.
 
 **Response:**
 ```javascript

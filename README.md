@@ -22,7 +22,7 @@
 * Backfill history: historical data since 2016-01-01, wherever applicable.
 * Institutional quality and independently verifiable.
 * To spur innovation and industry collaboration, this API is open for use by the public without cost.
-* Please contact us for consultative services and custom engineering work. We specialize in market data collection, high speed trading system, infrastructure optimization, and proprietary market making.
+* We specialize in market data collection, high speed trading system, infrastructure optimization, and proprietary market making. Hire us as engineers, liquidity providers, traders, or asset managers.
 * Join us on Discord https://discord.gg/b5EKcp9s8T and Medium https://cryptochassis.medium.com.
 
 ## General API Information
@@ -156,7 +156,7 @@ https://api.cryptochassis.com/v1/trade/coinbase/btc-usd
 
 **CSV file format:**
 
-time_seconds,price,size,is_buyer_maker
+time_seconds,price,size,is_buyer_maker  
 1594512000.14,9235,0.004,0
 
 **Legacy CSV file format:**

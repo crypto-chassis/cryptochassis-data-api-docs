@@ -29,7 +29,7 @@
 * Join us on Discord https://discord.gg/b5EKcp9s8T and Medium https://cryptochassis.medium.com.
 
 ## General API Information
-* The base endpoint is: **https://api.cryptochassis.com/v1**
+* The base url is: **https://api.cryptochassis.com/v1**
 
 ## Reqeust Rate Limits
 * The limit on the API is based on public IPs: 10 requests per second per IP.

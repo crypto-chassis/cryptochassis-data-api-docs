@@ -20,7 +20,7 @@
 * [Trade endpoint](#trade) CSV file format slightly changed. See [trade endpoint](#trade).
 
 # Public Data API From Cryptochassis
-* This REST API provides snapshot data (e.g. market depth, quote), tick data (e.g. trades), and aggregated data (e.g. ohlc) for crypto-currencies.
+* This REST API provides snapshot data (e.g. market depth), tick data (e.g. trades), and aggregated data (e.g. ohlc) for crypto-currencies.
 * Supported exchanges: see the allowed values of parameter `exchange` for the [information endpoint](#information).
 * Backfill history: historical data since 2016-01-01, wherever applicable.
 * Institutional quality and independently verifiable.
@@ -54,22 +54,34 @@ Name | Mandatory | Description
 ```javascript
 [
   {
-      "dataType": "quote",
-      "exchange": "coinbase",
-      "instrument": "btc-usd",
-      "availability": {
-          "firstAvailableTime": {
-              "seconds": 1572480000,
-              "iso": "2019-10-31T00:00:00.000Z"
-          },
-          "lastAvailableTime": {
-              "seconds": 1577318400,
-              "iso": "2019-12-26T00:00:00.000Z"
-          }
+    "dataType": "market-depth",
+    "exchange": "coinbase",
+    "instrument": "btc-usd",
+    "availability": {
+      "depth_10": {
+        "firstAvailableTime": {
+          "seconds": 1594166400,
+          "iso": "2020-07-08T00:00:00.000Z"
+        },
+        "lastAvailableTime": {
+          "seconds": 1630886400,
+          "iso": "2021-09-06T00:00:00.000Z"
+        }
       },
-      "examples": [
-          "https://api.cryptochassis.com/v1/quote/coinbase/btc-usd"
-      ]
+      "depth_1": {
+        "firstAvailableTime": {
+          "seconds": 1572480000,
+          "iso": "2019-10-31T00:00:00.000Z"
+        },
+        "lastAvailableTime": {
+          "seconds": 1630886400,
+          "iso": "2021-09-06T00:00:00.000Z"
+        }
+      }
+    },
+    "examples": [
+      "https://api.cryptochassis.com/v1/market-depth/coinbase/btc-usd"
+    ]
   },
   ...
 ]
@@ -77,7 +89,7 @@ Name | Mandatory | Description
 
 **Examples:**
 
-https://api.cryptochassis.com/v1/information
+https://api.cryptochassis.com/v1/information?dataType=market-depth&exchange=coinbase
 
 ### Market Depth
 ```
@@ -102,6 +114,10 @@ Name | Mandatory | Description
             "startTime": {
                 "seconds": 1594166400, // unix time
                 "iso": "2020-07-08T00:00:00.000Z"
+            },
+            "endTime": {
+                "seconds": 1594252800, // unix time
+                "iso": "2020-07-09T00:00:00.000Z"
             },
             "url": "https://marketdata-e0323a9039add2978bf5b49550572c7c.s3.amazonaws.com/market_depth/bitfinex/btc_usd/1594166400.csv.gz?AWSAccessKeyId=AKIATPNB7YZIUQR3JVNF&Expires=1594515416&Signature=T25g0YP0ALalj5jCUAQ9mtZ41M0%3D"
             // daily data, gzipped csv. Url is pre-signed and could expire.
@@ -144,6 +160,10 @@ Name | Mandatory | Description
             "startTime": {
                 "seconds": 1577318400, // unix time
                 "iso": "2019-12-26T00:00:00.000Z"
+            },
+            "endTime": {
+                "seconds": 1577404800, // unix time
+                "iso": "2019-12-27T00:00:00.000Z"
             },
             "url": "https://marketdata-e0323a9039add2978bf5b49550572c7c.s3.amazonaws.com/trade/coinbase/btc_usd/1577318400.csv.gzip?AWSAccessKeyId=AKIATPNB7YZIUQR3JVNF&Expires=1577486042&Signature=jQ9Vya3X9yBc7x26MyWhRKdKEdI%3D"
             // daily data, gzipped csv. Url is pre-signed and could expire.

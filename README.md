@@ -14,11 +14,6 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-**Small breaking change**:
-* [Information endpoint](#information) now needs mandatory query parameter `dataType` and `exchange`.
-* [Market depth endpoint](#market-depth) parameter `depth` now defaults to 1.
-* [Trade endpoint](#trade) CSV file format slightly changed. See [trade endpoint](#trade).
-
 # Public Data API From Cryptochassis
 * This REST API provides snapshot data (e.g. market depth), tick data (e.g. trades), and aggregated data (e.g. ohlc) for crypto-currencies.
 * Supported exchanges: see the allowed values of parameter `exchange` for the [information endpoint](#information).

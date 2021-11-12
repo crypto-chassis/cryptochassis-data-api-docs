@@ -14,7 +14,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# Public Data API From Cryptochassis
+# Public Data API From CryptoChassis
 * This REST API provides snapshot data (e.g. market depth), tick data (e.g. trades), and aggregated data (e.g. ohlc) for crypto-currencies.
 * Supported exchanges: see the allowed values of parameter `exchange` for the [information endpoint](#information).
 * Backfill history: historical data since 2016-01-01, wherever applicable.

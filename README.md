@@ -42,7 +42,7 @@ Information about available data types, exchanges, instruments, and the availabl
 Name | Mandatory | Description
 ------------ | ------------ | ------------
 `dataType` | yes | Allowed values: market-depth, trade, ohlc.
-`exchange` | yes | Allowed values: coinbase, gemini, kraken, bitstamp, bitfinex, bitmex, binance, binance-us, binance-usds-futures, binance-coin-futures, huobi, huobi-usdt-swap, huobi-coin-swap, okex, kucoin, ftx, ftx-us, deribit.
+`exchange` | yes | Allowed values: coinbase, gemini, kraken, bitstamp, bitfinex, bitmex, binance-us, binance-usds-futures, binance-coin-futures, huobi, huobi-usdt-swap, huobi-coin-swap, okex, kucoin, deribit.
 `instrument` | no | Comma seperated list.
 
 **Response:**

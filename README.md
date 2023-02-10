@@ -1,3 +1,5 @@
+Dear All, for a number of reasons, I have to make a hard decision about discontinuing one (and only one) of the API endpoints in our free market data service in the near future: https://github.com/crypto-chassis/cryptochassis-data-api-docs#ohlc, i.e. the ohlc endpoint. Starting February 28, 2023, we will disable that endpoint. All other endpoints are not affected. Thank you.
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*

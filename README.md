@@ -18,7 +18,7 @@ Dear All, to reduce the cost burden on our infrastructure and make good data ope
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # Public Data API From CryptoChassis
-* This REST API provides snapshot data (e.g. market depth), tick data (e.g. trades), and aggregated data (e.g. ohlc) for crypto-currencies.
+* This REST API provides snapshot data (e.g. market depth) and tick data (e.g. trades) for crypto-instruments.
 * Supported exchanges: see the allowed values of parameter `exchange` for the [information endpoint](#information).
 * Backfill history: historical data since 2016-01-01, wherever applicable.
 * Institutional quality and independently verifiable.
@@ -44,7 +44,7 @@ Information about available data types, exchanges, instruments, and the availabl
 
 Name | Mandatory | Description
 ------------ | ------------ | ------------
-`dataType` | yes | Allowed values: market-depth, trade, ohlc.
+`dataType` | yes | Allowed values: market-depth, trade.
 `exchange` | yes | Allowed values: coinbase, gemini, kraken, bitstamp, bitfinex, bitmex, binance-us, binance-usds-futures, binance-coin-futures, huobi, huobi-usdt-swap, huobi-coin-swap, okex, kucoin, deribit.
 `instrument` | no | Comma seperated list.
 

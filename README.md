@@ -13,7 +13,6 @@ Dear All, to reduce the cost burden on our infrastructure and make good data ope
     - [Information](#information)
     - [Market Depth](#market-depth)
     - [Trade](#trade)
-    - [OHLC](#ohlc)
   - [Troubleshoot](#troubleshoot)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -185,82 +184,6 @@ time_seconds,price,size,is_buyer_maker
 
 time_seconds,time_nanoseconds,price,size,is_buyer_maker,trade_id  
 1594512000,140000000,9235,0.004,0,96572013
-
-### OHLC
-```
-GET /ohlc/<exchange>/<instrument>?interval=<interval>&startTime=<startTime>&endTime=<endTime>
-```
-Aggregated metrics from raw trades: open, high, low, close, volume, vwap, number of trades, and twap.
-
-**Parameters:**
-
-Name | Mandatory | Description
------------- | ------------ | ------------
-`exchange` | yes | E.g. coinbase.
-`instrument` | yes | E.g. btc-usd.
-`interval` | no | Allowed values: 1m, 3m, 5m, 15m, 30m, 1h, 2h, 3h, 4h, 6h, 8h, 12h, 1d. Defaults to 1m.
-`startTime` | no | E.g. 1577318400 (seconds), 2019-12-26T00:00:00.000Z (iso). Defaults to 10 intervals before endTime.
-`endTime` | no | E.g. 1577318400 (seconds), 2019-12-26T00:00:00.000Z (iso). Defaults to most recent.
-`includeRealTime` | no | Allowed values: 0, 1. Defaults to 0. If set to 1, request rate limit on this endpoint is 1 request per second per public IP.
-
-**Response:**
-```javascript
-{
-    "historical": {
-        "urls": [
-            {
-                "startTime": {
-                    "seconds": 1451606400, // unix time
-                    "iso": "2016-01-01T00:00:00.000Z"
-                },
-                "endTime": {
-                    "seconds": 1590969600, // unix time
-                    "iso": "2020-06-01T00:00:00.000Z"
-                },
-                "url": "https://marketdata-e0323a9039add2978bf5b49550572c7c.s3.amazonaws.com/ohlc/1440/bitfinex/btc_usd/historical.csv.gz?AWSAccessKeyId=AKIATPNB7YZIUQR3JVNF&Expires=1593483130&Signature=KQMy29T5sVP7v2TUjXr9IOrhba0%3D"
-                // historical data, gzipped csv. Url is pre-signed and could expire.
-            }
-        ],
-        "expiration": "300 seconds"
-    },
-    "recent": {
-        "startTime": {
-            "seconds": 1590969600, // unix time
-            "iso": "2020-06-01T00:00:00.000Z"
-        },
-        "endTime": {
-            "seconds": 1591488000, // unix time
-            "iso": "2020-06-07T00:00:00.000Z"
-        },
-        "fields": "time_seconds, open, high, low, close, volume, vwap, number_of_trades, twap",
-        "data": [
-            [
-                1590969600, // unix time for interval start
-                "9451.1", // open
-                "10398", // high
-                "9421.75975983", // low
-                "10225.97600025", // close
-                "13427.10257919", // volume
-                "9887.7212102559", // volume weighted average price = sum(tick_price * tick_volume) / volume
-                117344, // number of trades
-                "9701.6274016032" // time weighted average price = sum(tick_price) / number_of_trades
-            ],
-            ...
-            // Note that the last bar may have not closed yet.
-        ]
-    }
-}
-```
-
-**Examples:**
-
-https://api.cryptochassis.com/v1/ohlc/coinbase/btc-usd  
-https://api.cryptochassis.com/v1/ohlc/coinbase/btc-usd?startTime=0
-
-**CSV file format:**
-
-time_seconds,open,high,low,close,volume,vwap,number_of_trades,twap  
-1451606400,430.35,430.39,430.35,430.39,0.0727,430.3804,4,430.3725
 
 ## Troubleshoot
 * macOS Archive Utility can't unzip gzipped files (Error 79 - Inappropriate file type or format). This is a known bug on some versions of macOS (see https://apple.stackexchange.com/questions/388759/archive-utility-cant-open-some-gzipped-text-files-based-on-their-contents). Try to unzip the files by other means (e.g. https://stackoverflow.com/questions/50993318/uncompress-a-txt-gz-file-in-mac).

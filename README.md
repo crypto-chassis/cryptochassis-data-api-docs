@@ -1,4 +1,4 @@
-Dear All, to reduce the cost burden on our infrastructure and make good data open and available to as many people as possible, starting March 15, 2023, we will impose an API rate limit of 10 per day on the end points of https://github.com/crypto-chassis/cryptochassis-data-api-docs#market-depth and https://github.com/crypto-chassis/cryptochassis-data-api-docs#trade. If you’d like to make API calls without rate limiting restrictions, please contact us to get an API key. Thank you.
+# Dear All, to reduce the cost burden on our operation and to put more focus on our library https://github.com/crypto-chassis/ccapi, starting May 26, 2023, we will stop servicing data to external users. We deeply apologize for the inconvenience. However, if you would like to quickly set up an in-house data collection pipeline, we can provide coding and consulting services for that purpose. Feel free to directly email us at hello@cryptochassis.com or contact us on Discord https://discord.gg/b5EKcp9s8T.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -129,7 +129,7 @@ https://api.cryptochassis.com/v1/market-depth/coinbase/btc-usd
 
 **CSV file format:**
 
-time_seconds,bid_price_bid_size|...,ask_price_ask_size|...  
+time_seconds,bid_price_bid_size|...,ask_price_ask_size|...
 1594512000,9234.05_2.20765974|...,9234.98_2|...
 
 If there is a gap in "time_seconds", it means that the market depth snapshot at that moment is the same as the previous moment.
@@ -175,12 +175,12 @@ https://api.cryptochassis.com/v1/trade/coinbase/btc-usd
 
 **CSV file format:**
 
-time_seconds,price,size,is_buyer_maker  
+time_seconds,price,size,is_buyer_maker
 1594512000.14,9235,0.004,0
 
 **Legacy CSV file format:**
 
-time_seconds,time_nanoseconds,price,size,is_buyer_maker,trade_id  
+time_seconds,time_nanoseconds,price,size,is_buyer_maker,trade_id
 1594512000,140000000,9235,0.004,0,96572013
 
 ## Troubleshoot
